@@ -1,0 +1,51 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles - La Noche Del Chin</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="container">
+        <header style="text-align: left; padding: 40px 0;">
+            <a href="index.html" style="color: var(--accent);">← Volver al inicio</a>
+            <h1>La Noche Del Chin</h1>
+            <p class="subtitle">Desarrollo de mecánicas</p>
+        </header>
+
+        <section class="detalle-contenido">
+            <div class="video-grande">
+                <video autoplay muted loop controls style="width: 100%; border-radius: 10px;">
+                    <source src="videos/LaNocheDelChin.mp4" type="video/mp4">
+                </video>
+            </div>
+
+            <div class="texto-explicativo" style="margin-top: 40px;">
+                <h2>Sobre el proyecto</h2>
+La Noche del Chin es un videojuego de estrategia y cartas desarrollado en Unreal Engine. Tanto el concepto original como las mecánicas y el apartado artístico han sido diseñados íntegramente por mí, trasladando un sistema de juego de mesa propio a un entorno digital donde el jugador se enfrenta a tres NPCs con IA personalizada en partidas de supervivencia de alta intensidad.                
+                <h2>Lo que aprendí</h2>
+                <p><strong>1. Arquitectura del Juego y Lógica de Estados</strong></p>
+                <ul>
+                    <li><strong>Game Mode as Master Controller:</strong> Centralicé la lógica del juego en el GameMode, actuando como una Máquina de Estados Finitos (FSM) que gestiona el flujo de la partida: Reparto, Ciclo de Turnos, Resolución de Conflictos y Reinicio de Ronda.</li>
+                    <li><strong>Data-Driven Design:</strong> Implementé un sistema basado en Data Tables para desacoplar los datos de la lógica. Utilizo tablas específicas para la base de datos del mazo (40 cartas), la gestión de posiciones de spawn en el mundo 3D y la rotación dinámica del "Dealer".</li>
+                    <li><strong>Gestión Dinámica de Turnos:</strong> Diseñé un algoritmo de turnos que valida en tiempo real el estado de los jugadores, ignorando automáticamente a aquellos con el booleano isEliminated activo, asegurando un flujo de juego fluido sin errores de referencia.</li>
+                </ul>
+                <p><strong>2. Inteligencia Artificial (NPC) y Controladores</strong></p>
+                <ul>
+                    <li><strong>AIController Customizado:</strong> Desarrollé una IA para 3 NPCs que operan de forma autónoma. La toma de decisiones se basa en un sistema de probabilidad aleatoria, pero con validaciones de reglas estrictas.</li>
+                    <li><strong>Comunicación Eficiente:</strong> Utilicé una estructura de Casting y Referencias cruzadas optimizada para la interacción entre el PlayerController, los AIControllers y el GameMode, permitiendo una transferencia de datos de arrays (Swap de cartas) segura y sin pérdida de información mediante variables temporales.</li>
+                </ul>
+                <p><strong>3. Technical Art y Feedback Visual (VFX/UI)</strong></p>
+                <ul>
+                    <li><strong>Material Instance Dynamics (MID):</strong> Sistema de corazones físicos que reaccionan al estado de salud mediante parámetros escalares y vectoriales en el material.</li>
+                    <li><strong>Visualización de Cartas:</strong> Las cartas son Actors 3D cuyos materiales se refrescan dinámicamente mediante la información de la DataTable en el momento del Spawn.</li>
+                    <li><strong>Niagara VFX:</strong> Diseñé un sistema de partículas de burbujas en botellas utilizando Niagara, integrado con lógica de movimiento para elementos flotantes (ojos) que refuerzan la atmósfera del juego.</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer style="padding: 100px 0;"></footer>
+</body>
+</html>

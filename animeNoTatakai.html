@@ -1,0 +1,55 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles - Anime No Tatakai</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="container">
+        <header style="text-align: left; padding: 40px 0;">
+            <a href="index.html" style="color: var(--accent);">← Volver al inicio</a>
+            <h1>Anime No Tatakai</h1>
+            <p class="subtitle">Desarrollo de mecánicas</p>
+        </header>
+
+        <section class="detalle-contenido">
+            <div class="video-grande">
+                <video autoplay muted loop controls style="width: 100%; border-radius: 10px;">
+                    <source src="videos/AnimeNoTatakai.mp4" type="video/mp4">
+                </video>
+            </div>
+
+            <div class="texto-explicativo" style="margin-top: 40px;">
+                <h2>Sobre el proyecto</h2>
+                <p>Anime No Tatakai es un videojuego de estrategia y defensa de torres (Tower Defense) desarrollado en Unity 2D para PC. El proyecto enfrenta a dos jugadores en un mismo hardware bajo una temática de combate entre equipos icónicos del anime (Team Naruto vs. Team Deku). El objetivo principal es la gestión estratégica de unidades en un tablero de 5 filas para destruir el nexo enemigo antes de que se agote el tiempo o la vida del jugador llegue a cero.</p>
+                <a href="documentos/MemoriaAnimeNoTatakai.pdf" style="color: var(--accent);">Memoria Anime No Tatakai</a>
+                
+                <h2>Lo que aprendí</h2>
+                <p><strong>1. El desarrollo se centró en la creación de scripts modulares heredados de MonoBehaviour para gestionar el comportamiento de los objetos. Los pilares lógicos incluyen:</strong></p>
+                <ul>
+                    <li><strong>Sistema de Movimiento:</strong> Implementación de lógica en el eje X mediante Transform.Translate, multiplicada por Time.deltaTime para garantizar que la velocidad sea independiente de la tasa de frames.</li>
+                    <li><strong>Gestión de Instancias:</strong> Uso de la función Instantiate para clonar Prefabs de personajes y ataques especiales en tiempo real durante la partida.</li>
+                    <li><strong>Detección de Colisiones:</strong> Aplicación de BoxCollider2D y Rigidbody2D. Se utilizaron métodos OnTriggerEnter para aplicar daño inmediato (como proyectiles) y OnCollisionXXX para combates cuerpo a cuerpo, evitando que los personajes de diferentes filas se solapen.</li>
+                </ul>
+                <p><strong>2. El juego basa su profundidad en el equilibrio de atributos de las unidades (Daño, Vida, Velocidad y Coste de tiempo):</strong></p>
+                <ul>
+                    <li><strong>Sistema de Costes:</strong> Cada personaje tiene un tiempo de reaparición (Cooldown) gestionado mediante Sliders de UI que bloquean la selección hasta que se cumple el tiempo requerido.</li>
+                    <li><strong>Habilidades Especiales:</strong> Implementación de ataques definitivos a distancia (Naruto/Deku) que limpian una fila completa y dañan directamente el nexo.</li>
+                    <li><strong>IA de Combate:</strong> Lógica de "daño por segundo" donde las unidades reducen la salud del oponente al colisionar, permitiendo que el vencedor prosiga su camino con la vida restante.</li>
+                </ul>
+                <p><strong>3. Interfaz de Usuario (UI) y Animación</strong></p>
+                <ul>
+                    <li><strong>Sistema de Canvas:</strong> Organización de elementos visuales (botones, barras de vida y temporizadores) mediante un Canvas Scaler para adaptar la resolución.</li>
+                    <li><strong>Feedback Visual:</strong> Implementación de un Animator Controller con parámetros booleanos para gestionar las transiciones entre los estados de movimiento y ataque de los personajes.</li>
+                    <li><strong>Temporizador de Partida:</strong> Scripting de cuenta atrás de 3 minutos utilizando Time.timeSinceLevelLoad para controlar el fin de la partida de forma precisa.</li>
+                </ul>
+            </div>
+            
+        </section>
+    </main>
+
+    <footer style="padding: 100px 0;"></footer>
+</body>
+</html>

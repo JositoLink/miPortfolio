@@ -1,0 +1,45 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles - FlappyRengoku</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="container">
+        <header style="text-align: left; padding: 40px 0;">
+            <a href="index.html" style="color: var(--accent);">← Volver al inicio</a>
+            <h1>FlappyRengoku</h1>
+            <p class="subtitle">Desarrollo de mecánicas</p>
+        </header>
+
+        <section class="detalle-contenido">
+            <div class="video-grande">
+                <video autoplay muted loop controls style="width: 100%; border-radius: 10px;">
+                    <source src="videos/FlappyRengoku.mp4" type="video/mp4">
+                </video>
+            </div>
+
+            <div class="texto-explicativo" style="margin-top: 40px;">
+                <h2>Sobre el proyecto</h2>
+                <p>Aquí explicas qué querías conseguir. Por ejemplo: "Mi objetivo era recrear el sistema de salto del arcade de 1991 pero usando Unity 2D..."</p>
+                
+                <h2>Lo que aprendí</h2>
+                <ul>
+                    <li><strong>Mecánicas de Vuelo:</strong> Programé el sistema de físicas del personaje utilizando el componente Rigidbody2D, gestionando el impulso de salto mediante la detección de inputs táctiles y de ratón (GetMouseButtonDown).</li>
+                    <li><strong>Generador Procedural de Obstáculos:</strong> Implementé un sistema de spawning automático que instancia los obstáculos ("manos") de forma infinita. Utilicé funciones de aleatoriedad (Random.Range) para variar la altura de los túneles y asegurar que cada partida sea única.</li>
+                    <li><strong>Sistema de Puntuación:</strong> Creé una variable estática para gestionar el puntaje, vinculada a un área de detección invisible (Trigger) entre los obstáculos que suma puntos al ser atravesada.</li>
+                    <li><strong>Controlador de Escena:</strong> Programé la lógica global del juego, incluyendo la congelación del tiempo (Time.timeScale) al colisionar y la funcionalidad de reinicio de nivel mediante el SceneManager.</li>
+                    <li><strong>Animación por Frames:</strong> Configuré las animaciones del personaje principal (Rengoku) utilizando el sistema de Keyframes de Unity para simular el aleteo/vuelo constante.</li>
+                    <li><strong>Escenario en Bucle (Looping Background):</strong> Implementé una animación técnica para el suelo y el fondo, logrando un efecto de movimiento infinito sin cortes visuales.</li>
+                    <li><strong>Configuración de Sprites:</strong> Realicé el slicing manual de hojas de sprites (Sprite Sheets) y configuré los filtros de imagen (Point Filter) para mantener la estética Pixel Art nítida y sin desenfoques.</li>
+                    <li><strong>Gestión de Memoria:</strong> Apliqué lógica de destrucción de objetos (Destroy) para eliminar los obstáculos que salen de la pantalla, evitando fugas de memoria y manteniendo el rendimiento estable.</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer style="padding: 100px 0;"></footer>
+</body>
+</html>

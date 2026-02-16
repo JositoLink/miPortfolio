@@ -1,0 +1,49 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles - Homer In The Hell</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="container">
+        <header style="text-align: left; padding: 40px 0;">
+            <a href="index.html" style="color: var(--accent);">← Volver al inicio</a>
+            <h1>Homer In The Hell</h1>
+            <p class="subtitle">Desarrollo de mecánicas</p>
+        </header>
+
+        <section class="detalle-contenido">
+            <div class="video-grande">
+                <video autoplay muted loop controls style="width: 100%; border-radius: 10px;">
+                    <source src="videos/HomerInfierno.mp4" type="video/mp4">
+                </video>
+            </div>
+
+            <div class="texto-explicativo" style="margin-top: 40px;">
+                <h2>Sobre el proyecto</h2>
+                <p>Mi objetivo era conseguir recrear la famosa escena de Homer en el infierno comiendo rosquillas.</p>
+                
+                <h2>Lo que aprendí</h2>
+                <ul>
+                    <li><strong>Creación de Assets:</strong> Para la creación de la escena, utilicé el toolset procedural MASH en Maya para gestionar la gran cantidad de elementos (rosquillas). En lugar de duplicar la geometría, empleé un sistema de instanciado (instancing) a través de un nodo Repro. Esto permitió optimizar drásticamente el consumo de memoria RAM y VRAM, manteniendo la estabilidad del software y permitiendo un renderizado fluido a pesar de la alta densidad de polígonos en pantalla.</li>
+                    <li><strong>Escultura Orgánica (Blender):</strong> Para los personajes, utilicé un flujo de trabajo de escultura digital. Partí de una base de primitivas (esferas), aplicando técnicas de blocking para definir las proporciones antes de detallar mediante pinceles de escultura.</li>
+                    <li><strong>Retopología:</strong> Una vez finalizado el esculpido, realicé una retopología manual completa. El objetivo fue transformar la malla de alta densidad en una topología funcional y optimizada para asegurar deformaciones limpias durante la fase de animación.</li>
+                    <li><strong>UV Mapping:</strong> Generé los mapas de coordenadas UV de todos los elementos.</li>
+                    <li><strong>Baking:</strong> Realicé el horneado de mapas de información (Normal Maps, Ambient Occlusion, Curvature) para trasladar el detalle de la escultura de alta resolución al modelo de baja poligonización.</li>
+                    <li><strong>Texturizado (Substance Painter):</strong> El proceso de pintado se realizó en Adobe Substance Painter, donde creé materiales personalizados para lograr el estilo visual característico de la animación, manteniendo la coherencia entre personajes y entorno.</li>
+                    <li><strong>Sistemas de Control:</strong> Desarrollé el Rig de los personajes en Autodesk Maya, implementando sistemas FK (Forward Kinematics) para un control preciso de las extremidades.</li>
+                    <li><strong>Controladores:</strong> Creé una interfaz de controladores personalizados (NURBS) para facilitar la manipulación del personaje y agilizar el flujo de trabajo de animación.</li>
+                    <li><strong>Facial Setup:</strong> Implementé un sistema de Blend Shapes para gestionar las expresiones faciales y los gestos, permitiendo dotar de personalidad y acting a los personajes.</li>
+                    <li><strong>Fidelidad Visual:</strong> Construí el escenario recreando milimétricamente la composición, perspectiva y elementos de la escena original de The Simpsons.</li>
+                    <li><strong>Animación:</strong> Realicé la animación completa de la escena mediante keyframing, trabajando el timing y el spacing para capturar la esencia cómica del clip original.</li>
+                    <li><strong>Iluminación y Render:</strong> Diseñé un esquema de iluminación que enfatiza la atmósfera del "infierno", configurando los pases de render y el motor de renderizado para obtener el acabado final de alta calidad.</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer style="padding: 100px 0;"></footer>
+</body>
+</html>
