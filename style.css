@@ -117,22 +117,7 @@ nav a:hover { color: var(--accent); }
     background: #252525;
 }
 
-.boton-descarga {
-    display: inline-block;
-    background-color: var(--accent); /* El azul que usamos antes */
-    color: #000; /* Texto negro para que contraste bien */
-    padding: 12px 25px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
-    margin-top: 20px;
-    transition: 0.3s;
-}
 
-.boton-descarga:hover {
-    background-color: #ffffff; /* Cambia a blanco al pasar el ratón */
-    transform: scale(1.05);
-}
 
 
 .info-proyecto h3 { margin: 0 0 10px; }
